@@ -1,0 +1,9 @@
+{
+  "generator-node": {
+    "promptValues": {
+      "authorName": "Gustavo Bilert",
+      "authorEmail": "gustavo.bilert@gmail.com",
+      "authorUrl": ""
+    }
+  }
+}

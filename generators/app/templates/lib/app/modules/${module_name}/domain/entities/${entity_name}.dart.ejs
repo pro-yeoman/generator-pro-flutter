@@ -1,0 +1,16 @@
+class <%= EntityName %> {
+
+<%_ fields.forEach(field => { _%>
+  <%_ with(field) { _%> 
+  <%=FieldType%>? <%=fieldName%>;
+  <%_ } _%> 
+<%_ }) _%>
+
+  <%= EntityName %>({
+  <%_ fields.forEach(field => { _%>
+    <%_ with(field) { _%> 
+    this.<%=fieldName%>,
+    <%_ } _%> 
+  <%_ }) _%>
+  }) 
+}

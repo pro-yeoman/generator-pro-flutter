@@ -1,0 +1,12 @@
+<%# Template, Target file, Context %>
+<% _.templateSettings.interpolate = /\$\{([\s\S]+?)\}/g; %> 
+[
+<%- entities.map(entity => {
+        return files.map(file => {
+            var compiled = _.template(file);
+            var targetFileName = compiled(entity);
+            return `{ "template": "${file}", "targetFile": "${targetFileName.replace(/\.ejs$/, '')}", "context": ${JSON.stringify(entity)} }`;
+        });
+        // return `{ "template": "EntityName.java.ejs", "targetFile": "${_.upperFirst(_.camelCase(entity.entityName))}.java", "context": ${JSON.stringify(entity)} }`
+    }).join(',\n'); %>
+]
